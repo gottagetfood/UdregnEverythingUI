@@ -324,10 +324,28 @@ public class UdregnEverythingUI extends javax.swing.JFrame {
             jTextField2.setText(String.valueOf(printable));
         }
         if (jTextField3.getText().equals("")) {
-            jTextField3.setText("Kan ikke beregnes");
+            double m1, T1, m2, SV1, SV2, Tf;
+            Tf = Double.parseDouble(jTextField7.getText());
+            m1 = Double.parseDouble(jTextField1.getText());
+            m2 = Double.parseDouble(jTextField2.getText());
+            T1 = Double.parseDouble(jTextField4.getText());
+            SV1 = Double.parseDouble(jTextField5.getText());
+            SV2 = Double.parseDouble(jTextField6.getText());
+            double result = ((m2*SV2*(Tf-T1)/(m1*SV1)))+Tf;
+            double printable = (double) Math.round(result * 100) / 100;
+            jTextField3.setText(String.valueOf(printable));
         }
         if (jTextField4.getText().equals("")) {
-            jTextField3.setText("Kan ikke beregnes");
+            double m1, T2, m2, SV1, SV2, Tf;
+            Tf = Double.parseDouble(jTextField7.getText());
+            m1 = Double.parseDouble(jTextField1.getText());
+            m2 = Double.parseDouble(jTextField2.getText());
+            T2 = Double.parseDouble(jTextField3.getText());
+            SV1 = Double.parseDouble(jTextField5.getText());
+            SV2 = Double.parseDouble(jTextField6.getText());
+            double result = ((m1*SV1*(Tf-T2))/(m2*SV2))+Tf;
+            double printable = (double) Math.round(result * 100) / 100;
+            jTextField4.setText(String.valueOf(printable));
         }
         if (jTextField5.getText().equals("")) {
             double m1, T2, m2, T1, SV2, Tf;
